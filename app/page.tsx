@@ -6,20 +6,18 @@ import Experiences from './components/organisms/Experiences';
 import Stack from './components/organisms/Stack';
 import Separator from './components/atoms/Separator';
 import { Header } from './components/organisms/Header';
+import { MutableRefObject } from 'react';
+
 export default function Home() {
 
-  const sectionRefs = [
-    useRef(null),
-    useRef(null),
-    useRef(null),
-  ];
+  const sectionRefs: MutableRefObject<HTMLDivElement | null>[] = [useRef(null), useRef(null), useRef(null)];
+
 
   const [tab, setTab] = useState(0)
 
   const handleTabClick = (index: number) => {
     setTab(index);
-    // Get the position of the section and scroll to it with a 64px offset from the top
-    const sectionPosition = sectionRefs && sectionRefs[index]?.current?.offsetTop - 64;
+    const sectionPosition = sectionRefs[index]?.current?.offsetTop ?? 0 - 64;
     window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
   };
 
@@ -36,7 +34,9 @@ export default function Home() {
               </p>
               <p className='text-4xl mt-4 uppercase font-semibold'>Bienvenue sur <span className='text-orange'>mon portfolio</span></p>
               <Separator />
-              <p className='mt-4 mb-16 '>Je suis Jérémie, étudiant en Master Dev Manager FullStack à l'EFREI, tout en travaillant en alternance chez SNCF Réseau. Passionné par le développement web depuis mes années de lycée, j'ai décidé de me spécialiser dans ce domaine pour mes études supérieures. Mon parcours a commencé par un BTS SIO option SLAM, suivi d'un Bachelor Ingénierie du Web en alternance, qui m'a permis de développer mes compétences à la fois en développement web front-end et back-end. Outre la programmation, j'accorde une grande importance au web design, car je crois que l'expérience utilisateur est primordiale pour les sites que je réalise. Mon objectif est de continuer à grandir en tant que développeur Full Stack et de créer des solutions numériques innovantes et conviviales pour les utilisateurs.</p>
+              <p className='mt-4 mb-16 '>
+                Je suis Jérémie, étudiant en Master Dev Manager FullStack à l&apos;EFREI, tout en travaillant en alternance chez SNCF Réseau. Passionné par le développement web depuis mes années de lycée, j&apos;ai décidé de me spécialiser dans ce domaine pour mes études supérieures. Mon parcours a commencé par un BTS SIO option SLAM, suivi d&apos;un Bachelor Ingénierie du Web en alternance, qui m&apos;a permis de développer mes compétences à la fois en développement web front-end et back-end. Outre la programmation, j&apos;accorde une grande importance au web design, car je crois que l&apos;expérience utilisateur est primordiale pour les sites que je réalise. Mon objectif est de continuer à grandir en tant que développeur Full Stack et de créer des solutions numériques innovantes et conviviales pour les utilisateurs.
+              </p>
               <Stack />
             </div>
             <Experiences sectionRef={sectionRefs[1]} />
