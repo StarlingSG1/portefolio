@@ -34,8 +34,8 @@ export default function Home() {
               </p>
               <p className='text-4xl mt-4 uppercase font-semibold'>Bienvenue sur <span className='text-orange'>mon portfolio</span></p>
               <Separator />
-              <p className='mt-4 mb-16 '>
-                Je suis Jérémie, étudiant en Master Dev Manager FullStack à l&apos;EFREI, tout en travaillant en alternance chez SNCF Réseau. Passionné par le développement web depuis mes années de lycée, j&apos;ai décidé de me spécialiser dans ce domaine pour mes études supérieures. Mon parcours a commencé par un BTS SIO option SLAM, suivi d&apos;un Bachelor Ingénierie du Web en alternance, qui m&apos;a permis de développer mes compétences à la fois en développement web front-end et back-end. Outre la programmation, j&apos;accorde une grande importance au web design, car je crois que l&apos;expérience utilisateur est primordiale pour les sites que je réalise. Mon objectif est de continuer à grandir en tant que développeur Full Stack et de créer des solutions numériques innovantes et conviviales pour les utilisateurs.
+              <p className='mt-4 mb-16 sm:text-base text-sm '>
+                Je suis Jérémie, étudiant en Master Dev Manager FullStack à l&apos;EFREI, tout en travaillant en alternance chez SNCF Réseau. Passionné par le développement web depuis mes années de lycée, j&apos;ai décidé de me spécialiser dans ce domaine. Cela m&apos;a permis de développer mes compétences à la fois en développement web front-end et back-end. Outre la programmation, j&apos;accorde une grande importance au web design, car je crois que l&apos;expérience utilisateur est primordiale pour les sites que je réalise.
               </p>
               <Stack />
             </div>
