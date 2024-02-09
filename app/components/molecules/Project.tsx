@@ -1,8 +1,10 @@
+import {TechnosDTO} from "@/app/data/projects";
+
 interface ProjectProps {
     title: string;
     href?: string;
     year: number;
-    technos?: string[];
+    technos?: TechnosDTO[];
 }
 
 export function Project({href = "#", year = 2023, technos = [], title = 'Titre du projet'}: ProjectProps){
@@ -15,7 +17,7 @@ export function Project({href = "#", year = 2023, technos = [], title = 'Titre d
                 </div>
                 <div className='flex flex-wrap items-center gap-4'>
                     {technos.map((techno, index) => (
-                        <div key={index} className='flex items-center gap-1 text-xs'><span className='w-3 h-3 rounded-full bg-orange'></span>{techno}</div>
+                        <div key={index} className='flex items-center gap-1 text-xs'><span className={`w-3 h-3 rounded-full`} style={{backgroundColor: techno.color}}></span>{techno.label}</div>
                     ))}
                 </div>
             </div>
