@@ -1,7 +1,14 @@
+function calculateAge() {
+    const BIRTHDAY = new Date('2001-05-09');
+    const ageDifMs = Date.now() - BIRTHDAY.getTime();
+    const ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
 export const sidebarData = {
     name: 'Jérémie Barrière',
     job: 'Développeur Full Stack',
-    age: '22 ans',
+    age: `${calculateAge()} ans`,
     location: 'Yerres, 91330',
     enterprise: 'SNCF Réseau',
     school: 'EFREI Paris',

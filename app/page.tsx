@@ -21,6 +21,10 @@ export default function Home() {
     window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
   };
 
+  function getYear() {
+    return new Date().getFullYear();
+  }
+
   return (
     <main className='flex flex-col'>
       <Header tab={tab} handleTabClick={handleTabClick} />
@@ -45,7 +49,7 @@ export default function Home() {
         </div>
       </section>
       <footer className='h-20 mt-10 bg-black w-full flex justify-center items-center'>
-        <p>Copyright © 2023 Jérémie BARRIÈRE</p>
+        <p>Copyright © {getYear()} - Jérémie BARRIÈRE</p>
       </footer>
     </main>
   )
