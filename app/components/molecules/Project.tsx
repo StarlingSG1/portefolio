@@ -1,19 +1,22 @@
-import {TechnosDTO} from "@/app/data/projects";
+import {ProjectsDTO, TechnosDTO} from "@/app/data/projects";
 
 interface ProjectProps {
-    title: string;
-    href?: string;
-    year: number;
-    technos?: TechnosDTO[];
+    project: ProjectsDTO;
 }
 
-export function Project({href = "#", year = 2023, technos = [], title = 'Titre du projet'}: ProjectProps){
+export function Project({project}: ProjectProps){
+
+    const {title, year, technos, href, description, id} = project;
+
     return (
         <div className='border-t  border-t-gray-lighter flex items-center justify-between gap-4 py-8'>
             <div className='flex flex-col gap-4'>
+                <div className={"flex flex-col gap-2"}>
                 <div className='flex flex-wrap items-center gap-3'>
                     <p className='text-xl sm:text-2xl font-semibold'>{title}</p>
                     <span className='py-[1px] px-2 hover:bg-gray-lighter border-gray-light border rounded-full text-gray-light text-sm'>{year}</span>
+                </div>
+                <p className={"text-gray-400 text-sm"}>{description}</p>
                 </div>
                 <div className='flex flex-wrap items-center gap-4'>
                     {technos.map((techno, index) => (
